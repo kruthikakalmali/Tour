@@ -1,1 +1,1 @@
-An application that fetches data using GoogleMap API,parses the resulting JSON format result using Regular Expressions and provides the necessary data to test various methods for different tours.Read the description file for further details.
+An application that fetches data using GoogleMap API,parses the JSON format result using Regular Expressions and provides the necessary data to test various methods for different tours.Read the description file for further details.
