@@ -3,8 +3,7 @@ import re
 
 
 class Tour(object):
-    # A constructor when an object is created that takes zero or more strings as arguments each giving a city name
-    # and state abbreviation
+    # A constructor when an object is created that takes zero or more strings as arguments each giving a city name and state abbreviation
     def __init__(self, *city):
         self.__city = []
         for i in city:
@@ -101,6 +100,5 @@ if __name__ == "__main__":
 
 
 
-
-
+# This is how the result_str looks like.This needs to be parsed to get the desired information.
 # result_str=b'{\n "destination_addresses" : [ "Lansing, MI, USA" ],\n "origin_addresses" : [ "Texas, USA" ],\n   "rows" : [\n{\n"elements" : [\n{\n"distance" : {\n "text" : "2,117 km",\n"value" : 2116799\n},\n"duration" : {\n"text" : "19 hours 8 mins",\n"value" : 68899\n},\n"status" : "OK"\n}\n]\n }\n],\n "status" : "OK"\n}\n'
