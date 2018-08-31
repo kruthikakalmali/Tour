@@ -1,0 +1,36 @@
+G:\Users\Admin\Desktop\myprograms\Python_Project\venv\Scripts\python.exe G:/Users/Admin/Desktop/myprograms/Python_Project/Tour.py
+t1: Texas, TX ----> Lansing, MI ----> Sacramento, CA
+t2:Oakland, CA
+t3:Sacramento, CA ----> Oakland, CA
+
+
+t1 distances: driving-5725 km; biking-6104 km; walking-5673 km
+
+
+Using driving distances from here on.....
+t4 is the combination of t1 and t2,details shown below
+t4: Texas, TX ----> Lansing, MI ----> Sacramento, CA ----> Oakland, CA
+t4 driving distance: 5858 km
+
+
+Equality of Tours
+t4 == t1 + t2: True
+t4 is a combination of t1 and t2
+
+
+Least distance Tour
+t1<t2: False
+The distance of tour 2 is lesser
+
+
+Tour with greater distance
+t1>t2: True
+The distance of tour 1 is greater
+
+
+Repeated Tours
+Cycling through the cities in t3 2 times
+t3*2: Sacramento, CA ----> Oakland, CA ----> Sacramento, CA ----> Oakland, CA
+Distance of the Total tour:396km
+
+Process finished with exit code 0
