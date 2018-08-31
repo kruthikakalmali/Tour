@@ -87,16 +87,55 @@ def main():
     t1 = Tour("Texas, TX", "Lansing, MI", "Sacramento, CA")
     t2 = Tour("Oakland, CA")
     t3 = Tour("Sacramento, CA", "Oakland, CA")
-    # Prints the distances through each mode for a particular tour
+
     print("t1: {}\nt2:{}\nt3:{}".format(t1, t2, t3))
-    print("t1 distances: driving-{} km; biking-{} km; walking-{} km".format(round(t1.distance() / 1000),
-                                                                            round(t1.distance('bicycling') / 1000),
-                                                                            round(t1.distance('walking') / 1000)))
-    print("Using driving distances from here on.")
+    print("\n")
+
+    # Prints the distances through each mode for a particular tour
+    print("t1 distances: driving-{} km; biking-{} km; walking-{} km".format(round(t1.distance() / 1000),round(t1.distance('bicycling') / 1000),
+    round(t1.distance('walking') / 1000)))
+    print("\n")
+
+    print("Using driving distances from here on.....")
+    # Concatenation of tours
     t4 = t1 + t2
+    print("t4 is the combination of t1 and t2,details shown below")
     print("t4:", t4)
     print("t4 driving distance:", round(t4.distance() / 1000), "km")
+    print("\n")
+
+    # Checking for equality of tours
+    print("Equality of Tours")
     print("t4 == t1 + t2:", t4 == t1 + t2)
+    if(t4 == t1 + t2):
+        print("t4 is a combination of t1 and t2")
+    print("\n")
+
+    # Checking for lesser than
+    print("Least distance Tour")
+    # Checking for lesser than
+    print("t1<t2:",t1.distance()<t2.distance())
+    if(t1.distance()<t2.distance()):
+        print("The distance of tour 1 is lesser")
+    else:
+        print("The distance of tour 2 is lesser")
+    print("\n")
+
+    # Checking for greater than
+    print("Tour with greater distance")
+    print("t1>t2:",t1.distance()>t2.distance())
+    if (t1.distance() > t2.distance()):
+        print("The distance of tour 1 is greater")
+    else:
+        print("The distance of tour 2 is greater")
+    print("\n")
+
+    # Repetitive Tours
+    print('Repeated Tours')
+    print('Cycling through the cities in t3 2 times')
+    print('t3*2:',t3*2)
+    t5=t3*2
+    print('Distance of the Total tour:{}km'.format(round(t5.distance()/1000)))
 
 
 if __name__ == "__main__":
