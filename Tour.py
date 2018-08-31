@@ -3,7 +3,8 @@ import re
 
 
 class Tour(object):
-    # A constructor when an object is created that takes zero or more strings as arguments each giving a city name and state abbreviation
+    # A constructor when an object is created that takes zero or more strings as arguments each giving a city name
+    # and state abbreviation
     def __init__(self, *city):
         self.__city = []
         for i in city:
@@ -12,11 +13,16 @@ class Tour(object):
 
     def distance(self, method='driving'):
         self.__distance = 0
+
+        # The general form of a distance query looks like this.
+        # http://maps.googleapis.com/maps/api/distancematrix/json?parameters
+        # The parameters used here are origin,destination,sensor and mode
+        # Example of a query url
+        # http://maps.googleapis.com/maps/api/distancematrix/json?origins=New+York+NY&destinations=Lansing+MI&mode=driving&sensor=false
+
         for i in range(len(self.__city) - 1):
-            query_url = "http://maps.googleapis.com/maps/api/distancematrix/json?origins=" + re.sub(r'[\W]*\s', '+',
-                                                                                                    self.__city[
-                                                                                                        i]) + "&destinations=" + re.sub(
-                r'[\W]*\s', '+', self.__city[i + 1]) + "&mode=" + method + "&sensor=false"
+            query_url = "http://maps.googleapis.com/maps/api/distancematrix/json?origins=" + re.sub(r'[\W]*\s', '+',self.__city[i])\
+                        + "&destinations=" + re.sub(r'[\W]*\s', '+', self.__city[i + 1]) + "&mode=" + method + "&sensor=false"
             web_obj = urllib.request.urlopen(query_url)
             result_str = str(web_obj.read())
             self.__distance += parser(result_str)
@@ -74,7 +80,7 @@ def parser(given):
     m = re.search(r'(?<="value" : )[\d]+', given)
     return float(m.group(0))
 
-    # The Main Function
+# The Main Function
 
 
 def main():
@@ -93,11 +99,8 @@ def main():
     print("t4 == t1 + t2:", t4 == t1 + t2)
 
 
-
 if __name__ == "__main__":
     main()
-
-
 
 
 # This is how the result_str looks like.This needs to be parsed to get the desired information.
